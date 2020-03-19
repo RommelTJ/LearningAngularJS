@@ -8,4 +8,5 @@ myApp.controller('mainController', function($scope) {
     return 'John Doe';
   };
   console.log($scope);
+  console.log($scope.getName());
 });
