@@ -14,8 +14,11 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
   });
 
   setTimeout(function() {
-    $scope.handle = "newtwitterhandle";
-    console.log("Scope Changed");
+    // Manually starting a digest update.
+    $scope.$apply(function() {
+      $scope.handle = "newtwitterhandle";
+      console.log("Scope Changed");
+    });
   }, 3000);
 
 }]);
