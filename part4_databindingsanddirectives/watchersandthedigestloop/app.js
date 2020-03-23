@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
 
   $scope.handle = '';
   $scope.lowercasehandle = function() {
@@ -13,12 +13,14 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
     console.log("New: ", newValue);
   });
 
-  setTimeout(function() {
-    // Manually starting a digest update.
-    $scope.$apply(function() {
-      $scope.handle = "newtwitterhandle";
-      console.log("Scope Changed");
-    });
+  $timeout(function() {
+    $scope.handle = "newtwitterhandle2";
+    console.log("Scope Changed");
+    // // Manually starting a digest update.
+    // $scope.$apply(function() {
+    //   $scope.handle = "newtwitterhandle";
+    //   console.log("Scope Changed");
+    // });
   }, 3000);
 
 }]);
