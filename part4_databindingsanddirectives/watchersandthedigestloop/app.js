@@ -1,6 +1,16 @@
-var tb = document.getElementById("name");
+var myApp = angular.module('myApp', []);
 
-tb.addEventListener("keypress",
-    function(event) {
-        console.log("Pressed!");
-    });
+myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+
+  $scope.handle = '';
+  $scope.lowercasehandle = function() {
+    return $filter('lowercase')($scope.handle);
+  };
+
+  $scope.$watch('handle', function(newValue, oldValue) {
+    console.info("changed");
+    console.log("Old: ", oldValue);
+    console.log("New: ", newValue);
+  });
+
+}]);
