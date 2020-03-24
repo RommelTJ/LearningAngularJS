@@ -47,7 +47,12 @@
                      ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters }"
                      ng-hide="handle.length === characters"
                 >
-                    Must be 5 characters
+                    <div ng-show="handle.length < characters">
+                        You have less than 5 characters
+                    </div>
+                    <div ng-show="handle.length > characters">
+                        You have more than 5 characters
+                    </div>
                 </div>
                 
                 <hr />
