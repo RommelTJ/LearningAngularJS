@@ -15,5 +15,9 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
         { rulename: "Must not be used elsewhere" },
         { rulename: "Must be cool" }
     ];
-    
+
+    $scope.alertClick = function() {
+        alert('Clicked!');
+    };
+
 }]);
