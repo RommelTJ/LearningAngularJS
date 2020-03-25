@@ -17,4 +17,17 @@ myApp.controller('mainController', ['$scope', '$filter', '$http', function ($sco
       .error(function (data, status) {
         console.log(data);
       });
+
+  $scope.newRule = '';
+  $scope.addRule = function () {
+    $http.post('/api', { newRule: $scope.newRule })
+      .success(function (result) {
+        console.log(result);
+        $scope.rules = result;
+        $scope.newRule = '';
+      })
+      .error(function (data, status) {
+        console.log(data);
+      });
+  };
 }]);
