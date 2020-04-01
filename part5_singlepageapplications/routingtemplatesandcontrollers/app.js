@@ -8,12 +8,14 @@ myApp.config(function($routeProvider) {
     })
     .when('/second', {
       templateUrl: '../pages/second.html',
-      controller: 'mainController'
+      controller: 'secondController'
     });
 });
 
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
-    
 
-    
+}]);
+
+myApp.controller('secondController', ['$scope', '$log', function($scope, $log) {
+
 }]);
