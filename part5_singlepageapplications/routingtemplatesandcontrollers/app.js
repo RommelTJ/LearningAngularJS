@@ -3,11 +3,11 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '../pages/main.html',
+      templateUrl: './pages/main.html',
       controller: 'mainController'
     })
     .when('/second', {
-      templateUrl: '../pages/second.html',
+      templateUrl: './pages/second.html',
       controller: 'secondController'
     });
 });
