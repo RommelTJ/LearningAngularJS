@@ -21,6 +21,15 @@ myApp.config(function ($routeProvider) {
     
 });
 
+myApp.service('nameService', function() {
+  var self = this;
+  this.name = 'John Doe';
+
+  this.namelength = function() {
+    return self.name.length;
+  };
+});
+
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
     
     $scope.name = 'Main';
