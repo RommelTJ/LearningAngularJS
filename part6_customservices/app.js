@@ -30,13 +30,15 @@ myApp.service('nameService', function() {
   };
 });
 
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
     
     $scope.name = 'Main';
+    $log.log(nameService.name);
+    $log.log(nameService.namelength());
     
 }]);
 
-myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
+myApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService) {
     
     $scope.num = $routeParams.num || 1;
     
