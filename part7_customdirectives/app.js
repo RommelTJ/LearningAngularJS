@@ -34,6 +34,9 @@ myApp.directive("searchResults", function() {
     restrict: 'AECM', // shorthand for "Attribute, Element, Class, Comment". 'AE' is the default.
     templateUrl: './directives/searchResult.html',
     replace: true, // default is false. This replaces the <search-results>.
-    scope: {}
+    scope: {
+      personName: "@", // @ sign means text
+      personAddress: "@"
+    }
   };
 });
