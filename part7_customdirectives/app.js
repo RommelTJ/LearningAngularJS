@@ -28,6 +28,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
 
 myApp.directive("searchResults", function() {
   return {
+    restrict: 'AE', // shorthand for "Attribute, Element". 'AE' is the default.
     template: '' +
       '<li class="list-group-item">\n' +
       '  <div>Doe, John</div>\n' +
