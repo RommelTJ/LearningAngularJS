@@ -36,6 +36,7 @@ myApp.directive("searchResults", function() {
       '<li class="list-group-item">\n' +
       '  <div>Doe, John</div>\n' +
       '  <div>555 Main St., New York, NY 11111</div>\n' +
-      '</li>'
+      '</li>',
+    replace: true // default is false. This replaces the <search-results>.
   };
 });
