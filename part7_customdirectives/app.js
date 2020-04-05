@@ -44,6 +44,7 @@ myApp.directive("searchResults", function() {
     replace: true, // default is false. This replaces the <search-results>.
     scope: {
       personObject: "=", // @ sign means text (one-way binding), = sign means object (two-way binding)
+      formattedAddressFunction: "&" // & sign means function
     }
   };
 });
