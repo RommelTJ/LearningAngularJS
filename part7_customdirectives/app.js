@@ -35,7 +35,7 @@ myApp.directive("searchResults", function() {
     templateUrl: './directives/searchResult.html',
     replace: true, // default is false. This replaces the <search-results>.
     scope: {
-      personObject: "=", // @ sign means text, = sign means object (two-way binding)
+      personObject: "=", // @ sign means text (one-way binding), = sign means object (two-way binding)
     }
   };
 });
