@@ -29,3 +29,13 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
     
     
 }]);
+
+myApp.directive("searchResults", function() {
+  return {
+    template: '' +
+      '<li class="list-group-item">\n' +
+      '  <div>Doe, John</div>\n' +
+      '  <div>555 Main St., New York, NY 11111</div>\n' +
+      '</li>'
+  };
+});
