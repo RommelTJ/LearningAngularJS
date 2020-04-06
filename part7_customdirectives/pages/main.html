@@ -1,0 +1,12 @@
+<label>Search</label>
+<input type="text" value="Doe" />
+
+<h3>Search Results</h3>
+<ul class="list-group">
+  <search-results
+    ng-repeat="person in people"
+    person-object="person"
+    formatted-address-function="formattedAddress(aPerson)" >
+    *search results may not be valid
+  </search-results>
+</ul>
