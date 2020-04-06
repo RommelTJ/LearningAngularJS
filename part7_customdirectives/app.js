@@ -44,22 +44,28 @@ myApp.directive("searchResults", function() {
       personObject: "=", // @ sign means text (one-way binding), = sign means object (two-way binding)
       formattedAddressFunction: "&" // & sign means function
     },
-    compile: function(elem, attrs) {
-      // Runs only once.
-      // console.log("Compiling...", elem);
-      return {
-        pre: function(scope, elements, attrs) {
-          // Runs pre-link for every element. Not very safe.
-         //  console.log("Pre-linking...", elements);
-        },
-        post: function(scope, elements, attrs) {
-          // Runs post-link for every element after DOM has been mutated.
-          // console.log("Post-linking...", elements);
-          if (scope.personObject.name === "Jane Doe") {
-            elements.removeAttr("class");
-          }
-        },
-      };
+    link: function(scope, elements, attrs) {
+      // This is a short-hand for compile -> post-link.
+      if (scope.personObject.name === "John Doe") {
+        elements.removeAttr("class");
+      }
     }
+    // compile: function(elem, attrs) {
+    //   // Runs only once.
+    //   // console.log("Compiling...", elem);
+    //   return {
+    //     pre: function(scope, elements, attrs) {
+    //       // Runs pre-link for every element. Not very safe.
+    //      //  console.log("Pre-linking...", elements);
+    //     },
+    //     post: function(scope, elements, attrs) {
+    //       // Runs post-link for every element after DOM has been mutated.
+    //       // console.log("Post-linking...", elements);
+    //       if (scope.personObject.name === "Jane Doe") {
+    //         elements.removeAttr("class");
+    //       }
+    //     },
+    //   };
+    // }
   };
 });
