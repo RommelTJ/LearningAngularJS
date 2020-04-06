@@ -43,6 +43,17 @@ myApp.directive("searchResults", function() {
     scope: {
       personObject: "=", // @ sign means text (one-way binding), = sign means object (two-way binding)
       formattedAddressFunction: "&" // & sign means function
+    },
+    compile: function(elem, attrs) {
+      console.log("Compiling...", elem);
+      return {
+        pre: function(scope, elements, attrs) {
+          console.log("Pre-linking...", elements);
+        },
+        post: function(scope, elements, attrs) {
+          console.log("Post-linking...", elements);
+        },
+      };
     }
   };
 });
