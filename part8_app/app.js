@@ -38,9 +38,9 @@ weatherApp.controller(
     $scope.city = cityService.city;
     $scope.weatherAPI = $resource(
       "https://api.openweathermap.org/data/2.5/forecast",
-      { q: $scope.city, cnt: 2, appid: "REDACTED" }
+      { q: $scope.city, cnt: 2, appid: "REDACTED" },
+      { 'query': { method: 'GET'} }
     );
     $scope.weatherResult = $scope.weatherAPI.query();
-    console.log($scope.weatherResult);
   }]
 );
