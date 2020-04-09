@@ -40,7 +40,7 @@ weatherApp.controller(
   'forecastController',
   ['$scope', '$resource', '$routeParams', 'cityService', function ($scope, $resource, $routeParams, cityService) {
     $scope.city = cityService.city;
-    $scope.days = $routeParams.days || 2;
+    $scope.days = $routeParams.days || '2';
     $scope.weatherAPI = $resource(
       "https://api.openweathermap.org/data/2.5/forecast",
       { q: $scope.city, cnt: $scope.days, appid: "REDACTED" },
