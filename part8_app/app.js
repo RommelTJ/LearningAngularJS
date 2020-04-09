@@ -22,7 +22,7 @@ weatherApp.config(function($routeProvider, $locationProvider, $sceDelegateProvid
 });
 
 weatherApp.service('cityService', function() {
-  this.city = "New York, NY";
+  this.city = "San Diego";
 });
 
 weatherApp.controller('homeController', ['$scope', 'cityService', function($scope, cityService) {
