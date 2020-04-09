@@ -44,6 +44,9 @@ weatherApp.controller(
     $scope.weatherResult = $scope.weatherAPI.query();
     $scope.convertToCelsius = function(degK) {
       return Math.round(degK - 273.15);
-    }
+    };
+    $scope.convertToDate = function(dt) {
+      return new Date(dt);
+    };
   }]
 );
