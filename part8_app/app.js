@@ -46,7 +46,8 @@ weatherApp.controller(
       return Math.round(degK - 273.15);
     };
     $scope.convertToDate = function(dt) {
-      return new Date(dt);
+      // datetime from OpenWeatherMap comes in milliseconds
+      return new Date(dt * 1000);
     };
   }]
 );
