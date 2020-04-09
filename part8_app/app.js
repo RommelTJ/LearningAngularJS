@@ -42,5 +42,8 @@ weatherApp.controller(
       { 'query': { method: 'GET'} }
     );
     $scope.weatherResult = $scope.weatherAPI.query();
+    $scope.convertToCelsius = function(degK) {
+      return Math.round(degK - 273.15);
+    }
   }]
 );
