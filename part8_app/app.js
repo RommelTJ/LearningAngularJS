@@ -1,9 +1,5 @@
 var weatherApp = angular.module('weatherApp', ["ngRoute", "ngResource", "ngSanitize"]);
 
-weatherApp.service('cityService', function() {
-  this.city = "San Diego";
-});
-
 weatherApp.controller('homeController', ['$scope', 'cityService', function($scope, cityService) {
   $scope.city = cityService.city;
   $scope.$watch('city', function() {
