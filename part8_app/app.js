@@ -11,6 +11,10 @@ weatherApp.config(function($routeProvider, $locationProvider, $sceDelegateProvid
     .when('/forecast', {
       templateUrl: 'pages/forecast.html',
       controller: 'forecastController'
+    })
+    .when('/forecast/:days', {
+      templateUrl: 'pages/forecast.html',
+      controller: 'forecastController'
     });
 
   $sceDelegateProvider.resourceUrlWhitelist([
@@ -34,11 +38,12 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 
 weatherApp.controller(
   'forecastController',
-  ['$scope', '$resource', 'cityService', function ($scope, $resource, cityService) {
+  ['$scope', '$resource', '$routeParams', 'cityService', function ($scope, $resource, $routeParams, cityService) {
     $scope.city = cityService.city;
+    $scope.days = $routeParams.days || 2;
     $scope.weatherAPI = $resource(
       "https://api.openweathermap.org/data/2.5/forecast",
-      { q: $scope.city, cnt: 2, appid: "REDACTED" },
+      { q: $scope.city, cnt: $scope.days, appid: "REDACTED" },
       { 'query': { method: 'GET'} }
     );
     $scope.weatherResult = $scope.weatherAPI.query();
