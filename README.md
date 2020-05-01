@@ -1,6 +1,6 @@
 # Learning Angular JS
 
-Version: 0.0.1 - 19 Mar 2020
+Version: 1.0.0 - 1 Apr 2020
 
 ## Description
 
